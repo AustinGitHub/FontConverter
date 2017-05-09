@@ -1,0 +1,45 @@
+<html> 
+
+<body bgcolor="red"> 
+<h1> <b>  Type in below </b> </h1>
+
+<font color="white">
+<div id="TypedText" contenteditable="true" placeholder="Type Here" style="background-color: black;border-color: white;border-style: solid;width: 500px;"></div>
+
+
+<br /> 
+
+<select id="Fonts"> 
+<option>Arial</option>
+<option>Calibri</option>
+<option>Wingdings</option>
+<option>Comic Sans</option>
+</select>
+
+<br />
+<br />
+<button onclick="post()" style="background-color: lightblue;width: 100px; height: 100px"><font size=5> Convert Text </button>
+
+
+<p id="PostedText"> </p>
+
+<script> 
+var TypedText = document.querySelector('[contenteditable]'),
+text = TypedText.textContent;
+
+function post() {
+	if (document.getElementById('Fonts').value == "Arial") {
+		document.getElementById('PostedText').innerHTML =  "<style> p { font-family: Arial } </style> "+ TypedText.textContent; 
+	}
+	else if (document.getElementById('Fonts').value == "Calibri") {
+		document.getElementById('PostedText').innerHTML =  "<style> p { font-family: Calibri } </style> "+ TypedText.textContent; 
+	}
+	else if (document.getElementById('Fonts').value == "Wingdings") {
+		document.getElementById('PostedText').innerHTML =  "<style> p { font-family: Wingdings } </style> "+ TypedText.textContent; 
+	}
+	else if (document.getElementById('Fonts').value == "Comic Sans") {
+		document.getElementById('PostedText').innerHTML =  "<style> p { font-family: Comic-Sans } </style> "+ TypedText.textContent; 
+	}
+}
+
+</script>
